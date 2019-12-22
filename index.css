@@ -1,0 +1,103 @@
+:root {
+  --specialColor: #ec1af3;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  background-image: linear-gradient(to bottom right, #2e3942, #1b222a);
+  color: white;
+  margin: 200px 400px;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.mailContainer {
+  box-shadow: 5px 5px 10px 0px #1d1f25;
+  background-color: #212830;
+  width: 100%;
+  padding: 50px;
+  position: relative;
+}
+.mail-x {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.mail-title {
+  margin-bottom: 40px;
+}
+.mail-text {
+  margin-bottom: 40px;
+}
+button,
+input {
+  display: inline-block;
+  border: none;
+  padding: 5px;
+  margin: 0;
+  text-decoration: none;
+  background: #00000000;
+  color: #ffffff;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+  color: var(--specialColor);
+  transition: 0.5s;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+button:active {
+  /* transform: scale(0.8); */
+  transition: ease-in-out, 0.5s;
+  color: var(--specialColor);
+}
+
+input {
+  display: inline-block;
+  border: none;
+  /* padding: 5px; */
+  margin: 0;
+  text-decoration: none;
+  background: #00000000;
+}
+
+.mail-input {
+  display: flex;
+  flex-direction: row;
+}
+
+.mail-input * {
+  border: 1px var(--specialColor) solid;
+}
+
+.mail-input button {
+  background-color: var(--specialColor);
+}
+
+input {
+  display: inline-block;
+  border: none;
+  padding: 10px 50px 10px 20px;
+  margin: 0;
+  text-decoration: none;
+  background: #00000000;
+}
