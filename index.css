@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Electrolize&display=swap");
+
 :root {
   --specialColor: #ec1af3;
 }
@@ -7,18 +10,27 @@
   margin: 0;
   padding: 0;
 }
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.4;
-  background-image: linear-gradient(to bottom right, #2e3942, #1b222a);
-  color: white;
-  margin: 200px 400px;
+html {
+  min-height: 100vh;
 }
+body {
+  font-family: "Electrolize", Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(207, 17%, 26%),
+    hsl(210, 17%, 10%)
+  );
+  color: white;
+  margin: 200px 400px 0;
+}
+
 a {
   color: #333;
   text-decoration: none;
 }
-button,
+
+button, /* clear default styling on buttons and inputs*/
 input {
   display: inline-block;
   border: none;
@@ -31,15 +43,9 @@ input {
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition: background 250ms ease-in, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none;
-}
-
-button:hover,
-button:focus {
-  color: var(--specialColor);
-  transition: 0.5s;
 }
 
 button:focus,
@@ -47,53 +53,59 @@ input:focus {
   outline: none;
 }
 
-button:active {
-  transition: ease-in-out, 0.5s;
-  color: var(--specialColor);
+input:focus::placeholder {
+  color: transparent;
 }
 
-input {
-  display: inline-block;
-  border: none;
-  /* padding: 5px; */
-  margin: 0;
-  text-decoration: none;
-  background: #00000000;
-}
 .mailContainer {
-  box-shadow: 5px 5px 10px 0px #1d1f25;
-  background-color: #212830;
+  box-shadow: 8px 8px 5px 0px #1d1f25;
+  background: linear-gradient(
+    20deg,
+    hsl(208, 21%, 13%) 15%,
+    hsl(210, 17%, 12%) 15%,
+    hsl(210, 17%, 12%) 85%,
+    hsl(208, 21%, 13%) 85%
+  );
   width: 100%;
-  padding: 50px;
+  padding: 100px 50px;
   position: relative;
 }
+
 .mail-x {
   position: absolute;
   top: 0;
   right: 5px;
 }
+.mail-x button:hover,
+.mail-x button:focus {
+  color: var(--specialColor);
+  transition: 0.3s;
+}
+
 .mail-title {
   margin-bottom: 40px;
+  font-family: "Montserrat Subrayada", Arial, Helvetica, sans-serif;
 }
+
 .mail-text {
   margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 2em;
+  font-weight: 300;
+  padding-right: 20px;
 }
 
 .mail-input {
-  display: flex;
-  flex-direction: row;
-  flex-flow: wrap;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
 }
 
 .mail-input * {
   border: 1px var(--specialColor) solid;
 }
 
-.mail-input button {
-  background-color: var(--specialColor);
-}
-
-input {
+.mail-input input {
+  text-decoration: none;
   display: inline-block;
   border: none;
   padding: 10px 50px 10px 20px;
@@ -103,9 +115,30 @@ input {
   width: 100%;
 }
 
+.mail-input button {
+  background: linear-gradient(90deg, var(--specialColor), #8f38e0, #7218d8);
+}
+.mail-input button:hover {
+  color: rgb(45, 64, 80);
+  transition: 0.5s;
+}
+
+.mail-input button:active {
+  color: white;
+  scale: 1.1;
+  transition: 0.2s;
+}
+
 @media only screen and (max-width: 1224px) {
   body {
     margin: 200px 200px;
+  }
+  .mail-title {
+    margin-bottom: 40px;
+    padding-right: 50px;
+  }
+  .mail-text {
+    padding-right: 50px;
   }
 }
 
@@ -113,16 +146,29 @@ input {
   body {
     margin: 200px 50px;
   }
+  .mail-input {
+    display: grid;
+    grid-template-columns: 3fr 2fr 2fr;
+  }
 }
 
-@media only screen and (max-width: 414px) {
+@media only screen and (max-width: 554px) {
   body {
     margin: 50px 20px;
   }
-  .mail-input button {
-    background-color: var(--specialColor);
-    border: 1px var(--specialColor) solid;
-
-    width: 100%;
+  .mailContainer {
+    padding: 15px;
+  }
+  .mail-title {
+    margin-bottom: 40px;
+    padding-right: 0px;
+  }
+  .mail-text {
+    padding-right: 0px;
+  }
+  .mail-input {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
   }
 }
