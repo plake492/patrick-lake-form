@@ -22,7 +22,7 @@ body {
     hsl(210, 17%, 10%)
   );
   color: white;
-  margin: 200px 400px 0;
+  margin: 180px 400px;
 }
 
 a {
@@ -39,7 +39,6 @@ input {
   text-decoration: none;
   background: #00000000;
   color: #ffffff;
-  font-family: sans-serif;
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
@@ -61,10 +60,12 @@ input:focus::placeholder {
   box-shadow: 8px 8px 5px 0px #1d1f25;
   background: linear-gradient(
     20deg,
-    hsl(208, 21%, 13%) 15%,
-    hsl(210, 17%, 12%) 15%,
-    hsl(210, 17%, 12%) 85%,
-    hsl(208, 21%, 13%) 85%
+    hsl(208, 21%, 13%) 10%,
+    hsl(208, 17%, 12%) 10%,
+    hsl(210, 17%, 12%) 80%,
+    hsl(210, 21%, 13%) 80%,
+    hsl(208, 21%, 13%) 10%,
+    hsl(208, 21%, 13%) 10%
   );
   width: 100%;
   padding: 100px 50px;
@@ -100,26 +101,28 @@ input:focus::placeholder {
   grid-template-columns: 2fr 1fr 2fr;
 }
 
-.mail-input * {
-  border: 1px var(--specialColor) solid;
-}
-
 .mail-input input {
   text-decoration: none;
   display: inline-block;
   border: none;
-  padding: 10px 50px 10px 20px;
+  padding: 10px 20px 10px 20px;
   margin: 0;
   text-decoration: none;
   background: #00000000;
   width: 100%;
 }
 
+.mail-input__inputBox {
+  border: 1px var(--specialColor) solid;
+}
+
 .mail-input button {
+  min-width: 180px;
+  font-size: 1vw;
   background: linear-gradient(90deg, var(--specialColor), #8f38e0, #7218d8);
 }
 .mail-input button:hover {
-  color: rgb(45, 64, 80);
+  color: #998ea5;
   transition: 0.5s;
 }
 
@@ -128,6 +131,20 @@ input:focus::placeholder {
   scale: 1.1;
   transition: 0.2s;
 }
+
+/* ================================================ */
+
+@media only screen and (min-width: 2200px) {
+  body {
+    margin: 200px 800px;
+  }
+  .mail-input button {
+    min-width: 0px;
+    font-size: 18px;
+  }
+}
+
+/* ================================================ */
 
 @media only screen and (max-width: 1224px) {
   body {
@@ -140,7 +157,12 @@ input:focus::placeholder {
   .mail-text {
     padding-right: 50px;
   }
+  .mail-input button {
+    font-size: 14px;
+  }
 }
+
+/* ================================================ */
 
 @media only screen and (max-width: 1024px) {
   body {
@@ -152,12 +174,15 @@ input:focus::placeholder {
   }
 }
 
+/* ================================================ */
+
 @media only screen and (max-width: 554px) {
   body {
     margin: 50px 20px;
   }
   .mailContainer {
     padding: 15px;
+    box-shadow: none;
   }
   .mail-title {
     margin-bottom: 40px;
@@ -169,6 +194,6 @@ input:focus::placeholder {
   .mail-input {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 40px 40px;
   }
 }
