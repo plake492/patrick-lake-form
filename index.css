@@ -18,24 +18,6 @@ a {
   color: #333;
   text-decoration: none;
 }
-.mailContainer {
-  box-shadow: 5px 5px 10px 0px #1d1f25;
-  background-color: #212830;
-  width: 100%;
-  padding: 50px;
-  position: relative;
-}
-.mail-x {
-  position: absolute;
-  top: 0;
-  right: 5px;
-}
-.mail-title {
-  margin-bottom: 40px;
-}
-.mail-text {
-  margin-bottom: 40px;
-}
 button,
 input {
   display: inline-block;
@@ -66,7 +48,6 @@ input:focus {
 }
 
 button:active {
-  /* transform: scale(0.8); */
   transition: ease-in-out, 0.5s;
   color: var(--specialColor);
 }
@@ -79,10 +60,29 @@ input {
   text-decoration: none;
   background: #00000000;
 }
+.mailContainer {
+  box-shadow: 5px 5px 10px 0px #1d1f25;
+  background-color: #212830;
+  width: 100%;
+  padding: 50px;
+  position: relative;
+}
+.mail-x {
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+.mail-title {
+  margin-bottom: 40px;
+}
+.mail-text {
+  margin-bottom: 40px;
+}
 
 .mail-input {
   display: flex;
   flex-direction: row;
+  flex-flow: wrap;
 }
 
 .mail-input * {
@@ -100,4 +100,29 @@ input {
   margin: 0;
   text-decoration: none;
   background: #00000000;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1224px) {
+  body {
+    margin: 200px 200px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    margin: 200px 50px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  body {
+    margin: 50px 20px;
+  }
+  .mail-input button {
+    background-color: var(--specialColor);
+    border: 1px var(--specialColor) solid;
+
+    width: 100%;
+  }
 }
